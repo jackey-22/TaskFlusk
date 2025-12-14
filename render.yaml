@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: taskflux-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python taskflux_bot.py
+    envVars:
+      - key: EMAIL
+        sync: false
+      - key: PASSWORD
+        sync: false
+      - key: NTFY_URL
+        sync: false
